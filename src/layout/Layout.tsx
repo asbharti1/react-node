@@ -169,7 +169,7 @@ export function Layout() {
   useEffect(() => {
       fetch("http://127.0.0.1:5000/getUserData", {
           method: "POST",
-          crossDomain: true,
+          mode: "cors",
           headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
@@ -203,7 +203,7 @@ export function Layout() {
 
     fetch("http://127.0.0.1:5000/getEvents", {
         method: "POST",
-        crossDomain: true,
+        mode: "cors",
         headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -228,7 +228,7 @@ export function Layout() {
 
     fetch("http://127.0.0.1:5000/getFriendRequests", {
         method: "POST",
-        crossDomain: true,
+        mode: "cors",
         headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -258,7 +258,7 @@ export function Layout() {
             margin: "10vh auto",
             borderColor: "red",
           }}
-          size={10}
+          //size={10}
         />
       )}
       {loaded && (

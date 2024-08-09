@@ -75,7 +75,7 @@ export function LoginRegister() {
 
   const [loginBtnColor, setLoginBtnColor] = useState("bg-dark");
 
-  const [popupMessage, setPopupMessage] = useState("");
+  const [popupMessage, setPopupMessage] = useState<string | null>(null);;
   const [popupVisible, setPopupVisible] = useState(false);
 
   const closePopup = function() {
@@ -124,7 +124,7 @@ export function LoginRegister() {
   function login() {
     fetch("http://127.0.0.1:5000/login-user", {
       method: "POST",
-      crossDomain: true,
+       mode: "cors",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -152,7 +152,7 @@ export function LoginRegister() {
   function register() {
     fetch("http://127.0.0.1:5000/register", {
       method: "POST",
-      crossDomain: true,
+      mode: "cors",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
